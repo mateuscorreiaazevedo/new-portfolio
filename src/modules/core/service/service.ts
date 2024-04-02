@@ -1,5 +1,4 @@
 import axios, { AxiosInstance, AxiosResponse } from 'axios'
-import { env } from '@/main/config'
 
 type HttpRequest = {
   url: string
@@ -16,10 +15,8 @@ type HttpResponse<T = any> = {
 class Service {
   private api: AxiosInstance
 
-  constructor(private baseURL = env.baseURL) {
-    this.api = axios.create({
-      baseURL: this.baseURL
-    })
+  constructor() {
+    this.api = axios.create({})
   }
 
   async request<T = any>(props: HttpRequest): Promise<HttpResponse<T>> {
@@ -28,7 +25,7 @@ class Service {
 
     try {
       response = await this.api.request({
-        url,
+        url: `${location.protocol}//${location.host}/api${url}`,
         data,
         headers,
         method,

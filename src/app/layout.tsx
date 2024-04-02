@@ -26,7 +26,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const isAuth = cookies().has('auth_token')
 
   return (
-    <html lang="pt-br">
+    <html lang="pt-br" className="scrollbar-none">
       <body
         className={`
           ${roboto.variable}
@@ -37,6 +37,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           font-main
           text-white
           scrollbar-none
+          scrollbar-track-transparent
+          scrollbar-thumb-transparent
+          scrollbar-corner-transparent
         `}
       >
         <div className="fixed inset-0 -z-10 bg-[url(../assets/images/bg-stars.svg)] bg-cover" />

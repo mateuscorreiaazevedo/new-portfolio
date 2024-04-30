@@ -1,5 +1,4 @@
 import { images } from '@/assets/images'
-import { env } from '@/main/config'
 import { Section } from '@/main/ui'
 import Image from 'next/image'
 
@@ -24,9 +23,7 @@ export default function Home() {
           SEO. Além disso, estou me graduando no curso de Sistemas de Informação.
         </p>
         <a
-          href={`https://drive.google.com/uc?export=download&id=${
-            env.cvId ?? '1EkvOJrit4p5zPDT8SfM8wdlazadzYcZ8'
-          }`}
+          href="https://docs.google.com/document/d/1vfBC_kOnFmI2pYm4MtZPK0TRqpbpG5K6BmXURtnNBYM/export?format=pdf"
           className="mt-2 flex h-10 w-80 items-center justify-center bg-violet-500 font-alt uppercase text-black transition-colors hover:bg-violet-600"
         >
           Download CV
